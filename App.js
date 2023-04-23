@@ -1,15 +1,3 @@
-
-import './App.css';
-
-function App() {
-  return (
-    <body>
-      
-        
-    
-    </body>
-  );
-}
 const navBar = document.querySelectorAll('nav ul li a');
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('section');
@@ -54,6 +42,3 @@ window.addEventListener('scroll', () => {
     });
   }
 });
-
-
-export default App;

@@ -1,0 +1,249 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  html, body {
+    margin: 0;
+    font-family: 'Nerko One', 'Itim', cursive, ource-code-pro, Menlo, Monaco, Consolas;
+    /* font-size: 25px; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%; /* set the height of the html and body elements to 100% */
+    margin: 0; /* remove any default margin */
+    padding: 0; /* remove any default padding */
+  }
+  
+  code {
+    font-family: 'Nerko One', cursive, ource-code-pro, Menlo, Monaco, Consolas;
+  }
+  
+  * { 
+    margin: 0; 
+    padding: 0; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box; 
+  }
+  
+  h1,h2,h3,h4,h5,h6,a{
+      margin:0;
+  }
+  
+  a {
+    color: inherit;
+  }
+  
+  nav {
+    top: 0%;
+    width: 100%;
+    position: fixed;
+    background-color: #69bbf2;
+    z-index: 1;
+  }
+  
+  .container {
+    padding: 22px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .container ul li {
+    list-style: none;
+    margin: 0 10px;
+    display: inline-block;
+  }
+  
+  .container ul li a:hover {
+    padding: 12px;
+    color: #fc0;
+  }
+  
+  .container ul li a {
+    margin: 8px;
+    padding: 10px;
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+  }
+  
+  .container p{
+    margin-bottom: 16px;
+    color: #fc0;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  
+  /* .item {
+    height: 90vh; 
+    width: 100%;
+    text-align: center;
+     background-color: #cbebff; 
+    border-radius: 20px;
+    margin-bottom: 15px;
+    padding-top: 10%;
+    font-family: 'Itim', cursive;
+  } */
+
+  .item {
+    min-height: 90vh;
+    width: 100%;
+    /* background-color: #cbebff;  */
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    padding-top: 10%;
+    font-family: 'Itim', cursive;
+  }
+  
+  .first {
+    margin-top: 100px;
+  }
+  
+  .default {
+    margin-top: 64px;
+  }
+  
+  .col-full {
+    width: 1044px;
+  }
+  
+  #background-bubble {
+    background-color: rgba(255, 255, 255, 0.8); /* set the background color and opacity */
+    border-radius: 25px; /* set the border-radius to make the div rounded */
+    padding: 20px; /* add some padding to create space between the content and the border */
+  }
+  
+  h2 {
+    font-family: 'Nerko One';
+    font-size: 50px;
+  }
+  
+  .wrapper {
+    display: flex;
+  }
+  
+  .left-column {
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    padding-left: 10%;
+  }
+  
+  .right-column {
+    width: 50%;
+    padding: 50px;
+    text-align: center;
+    border-radius: 20px;
+    font-family: 'Itim';
+    font-size: 25px;
+  }
+  
+  .about-p {
+    font-family: 'Itim', cursive;
+    font-size: 18px;
+    max-height: calc(90vh - 180px); /* adjust the value based on your layout */
+    overflow-y: auto;
+  }
+  
+  .nav-link.active {
+    color: #fc0;
+    text-decoration: none;
+  }
+  
+  
+  /*  */
+  .project-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .project-box {
+    width: 20%;
+    height: 0;
+    padding-bottom: 20%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 5%;
+    background-color: #69bbf2;
+    border-radius: 10%;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .project-box a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .project-box:hover {
+    transform: translateY(-10px);
+  }
+  
+  .project-box:hover:after {
+    content: attr(data-description);
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    color: white;
+    text-align: center;
+  }
+  
+  .project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-top: 10%;
+    font-size: 30px;
+  }
+  
+  .social-icons a {
+    margin-right: 2%;
+    margin-left: 2%;
+  
+  }
+  
+  
