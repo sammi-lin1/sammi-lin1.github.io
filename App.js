@@ -1,43 +1,63 @@
-const navBar = document.querySelectorAll('nav ul li a');
-const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('section');
+const navBar = document.querySelectorAll("nav ul li a");
+const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section");
+const resume = document.getElementById("sec-4");
 
-navBar.forEach(link => {
-  link.addEventListener('click', e => {
+resume.addEventListener("click", (e) => {
+
+
+  const resumePDF = "Resume/Sammi_Lin_Resume.pdf";
+
+  const link = document.createElement("a");
+  link.href = resumePDF;
+  link.download = "Sammi_Lin_Resume.pdf";
+
+  // Append the anchor to the body (required for Firefox)
+  document.body.appendChild(link);
+
+  // Programmatically click the anchor to trigger the download
+  link.click();
+
+  // Remove the anchor from the document
+  document.body.removeChild(link);
+});
+
+navBar.forEach((link) => {
+  link.addEventListener("click", (e) => {
     e.preventDefault();
 
-    const href = link.getAttribute('href');
+    const href = link.getAttribute("href");
     const targetElement = document.querySelector(href);
     const targetPosition = targetElement.offsetTop;
 
     window.scrollTo({
       top: targetPosition,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   });
 });
 
-window.addEventListener('scroll', () => {
-  let currentSection = '';
+window.addEventListener("scroll", () => {
+  let currentSection = "";
 
   // Iterate through all sections to find the one that is currently scrolled to
-  sections.forEach(section => {
+  sections.forEach((section) => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.clientHeight;
     if (window.scrollY >= sectionTop - sectionHeight / 3) {
-      currentSection = section.getAttribute('id');
+      currentSection = section.getAttribute("id");
     }
   });
 
   // If the user hasn't scrolled yet, manually set the first link to be active
   if (window.scrollY === 0) {
-    navLinks[0].classList.add('active');
+    navLinks[0].classList.add("active");
   } else {
     // Add active class to corresponding link in the navbar
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href').includes(currentSection)) {
-        link.classList.add('active');
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(currentSection)) {
+        link.classList.add("active");
       }
     });
   }
